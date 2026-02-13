@@ -1,0 +1,39 @@
+services:
+  #BACKEND:
+  dash-backend:
+    build: ./back
+    container_name: dash-backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Allows monitoring of other containers
+      - ./back:/usr/src/app
+      - /usr/src/app/node_modules
+    # Hardware Acceleration for Intel QuickSync
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "993" # Replace with your own Group ID
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+
+  #FRONTEND(Nginx):
+  dash-frontend:
+    image: nginx:alpine
+    container_name: dash-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80" # Access via http://your-ip
+    volumes:
+      # Maps your local front folder to Nginx's web root
+      - ./front:/usr/share/nginx/html
+      # Ensures the dynamic config is used
+      - ./front/config.js:/usr/share/nginx/html/config.js
+    depends_on:
+      - dash-backend
+
+networks:
+  default:
+    name: dash-network
