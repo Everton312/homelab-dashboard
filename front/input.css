@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body{
+        @apply bg-gradient-to-b from-backgroundred bg-no-repeat to-pureblack bg-fixed min-h-screen p-5 sm:p-8;
+
+    }
+
+    .content{
+        @apply md:grid md:grid-cols-7 gap-20;
+    }
+
+
+    main{
+        @apply md:col-span-4;
+    }
+
+    header{
+        @apply relative w-full max-w-3xl  drop-shadow-dropred;
+    }
+
+
+    aside{
+        @apply md:col-span-3;
+        @apply flex flex-col items-center md:col-span-3;
+    }
+
+    .svg-trapezoid{
+        @apply w-full h-auto block filter drop-shadow-dropred;
+    }
+
+    .overlay-container{
+        @apply absolute inset-0 p-5 lg:p-10 justify-center;
+        @apply grid grid-cols-2 gap-1 md:gap-5;
+        @apply text-white;
+    }
+
+
+    #date{
+        @apply font-rajdhani font-semibold text-sm md:text-xl xl:text-3xl text-center text-cyberorange;
+        
+    }
+
+    .weather{
+        @apply col-span-1 grid grid-cols-[1fr_auto] items-start gap-y-0 pr-6 lg:pr-10;
+    }
+
+    #temp, #clock{
+        @apply font-orbitron font-semibold text-3xl md:text-4xl xl:text-6xl text-cyberyellow leading-none;
+        @apply col-span-1;
+    }
+
+    #temp{
+        @apply col-start-1 leading-none whitespace-nowrap;;
+    }
+
+    .clock{
+        @apply gap-1 lg:gap-3;
+    }
+
+    .weatherContent {
+        @apply col-span-2 flex flex-col items-start gap-0 lg:gap-1 mt-1;
+    }
+
+    .weatherPrefix {
+        @apply font-rajdhani font-semibold text-sm md:text-lg xl:text-3xl  text-cyberorange text-left leading-tight;
+    }
+
+    .weatherSuffix{
+        @apply text-white;
+    }
+
+    #cpu-degrees{
+        @apply font-rajdhani font-semibold text-sm md:text-lg xl:text-3xl  text-cyberorange text-left leading-tight top-5;
+    }
+    
+    #cpu-text{
+        @apply text-4xl xl:text-7xl;
+    }
+
+    #stacks{
+        @apply w-full max-w-3xl justify-items-center h-auto py-16 lg:w-full lg:h-full grid grid-cols-3 lg:grid-cols-5 lg:gap-4;
+    }
+
+    .appContainer{
+        @apply w-20 h-20 md:w-28 md:h-28 relative flex;
+    }
+
+    .appIcon{
+        @apply w-full h-full absolute inset-0 p-6 ml-2;
+    }
+
+    .appButton{
+        @apply transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110;
+    }
+
+    
+    #cpu-progress {
+        filter: drop-shadow(0 0 8px rgba(35, 168, 183, 0.5));
+        transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #cpu-ticks {
+        filter: drop-shadow(0 0 4px rgba(146, 49, 47, 0.8));
+    }
+
+    #cpu-temp{
+        @apply text-xl font-bold uppercase tracking-widest text-slate-500;
+    }
+
+    #cpu-text{
+        @apply text-5xl md:text-6xl font-semibold font-orbitron text-cyberblue;
+    }
+
+
+    .ram-gallery{
+        @apply w-6  lg:w-8 2xl:w-12 h-auto inline-block;
+    }
+
+    #rams{
+        @apply flex flex-row flex-wrap justify-center gap-4 sm:gap-8 2xl:gap-6 mt-6;
+    }
+
+    .ram{
+        @apply w-full h-auto object-contain;
+    }
+
+    #ramSpcs{
+        @apply w-full;
+    }
+
+    #ramInfo{
+        @apply flex font-rajdhani font-semibold text-sm md:text-2xl text-cyberorange justify-center;
+    }
+
+    #disks{
+        @apply flex flex-col relative w-full mt-8 md:max-w-[550px];
+    }
+
+
+
+    .chart{
+        @apply w-full h-8 relative bg-insidered border-2 border-strokered overflow-hidden;
+    }
+
+
+    .diskProgress{
+        @apply h-full bg-cyberyellow;
+    }
+
+    #disks p{
+        @apply font-rajdhani font-semibold text-sm md:text-lg;
+    }
+
+    .diskInfo{
+        @apply flex-none p-1 text-cyberyellow;
+    }
+
+    .diskName{
+        @apply text-cyberblue;
+    }
+
+    .diskBlock{
+        @apply flex;
+    }
+
+    #weatherIcon{
+        @apply col-span-1;
+    }
+
+    #icon{
+        @apply text-3xl xl:text-5xl text-cyberyellow;
+    }
+
+    #immichInfo{
+        @apply w-full mt-8 md:max-w-[550px] h-64 bg-insidered border-2 border-strokered ;
+    }
+
+    #immichTitle{
+        @apply w-full h-auto border-b-2 border-strokered font-rajdhani font-semibold text-2xl text-cyberyellow p-2;
+    }
+
+    #immichContent{
+        @apply w-full h-52 place-content-evenly items-center gap-0;
+    }
+
+    #immichTable{
+        @apply w-full h-full font-rajdhani font-semibold md:table-fixed text-base md:text-2xl;
+    }
+
+    .immichSuffix{
+        @apply  text-cyberblue ;
+    }
+
+    .immichPrefix{
+        @apply text-white pl-4;
+    }
+
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');            
+            @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <main>
+                <header>
+                    
+                    <svg id="svg-trapezoid"
+                        viewBox="0 0 400 150" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none"
+                        >
+                        <polygon id="polygon-trapezoid" class="fill-insidered stroke-strokered"
+                        points="0,0 400,0 400,110 360,150 0,150"
+                        stroke-width="5"
+                        />
+                    </svg>
+                    <div class="overlay-container">
+                        <div class="clock">
+
+                            <h1 id="clock">--</h1>
+                            <span id="date">--</span>
+
+                        </div>
+
+                        <div class="weather">
+                            <h1 id="temp">-</h1>
+                            <figure id="weatherIcon">
+                                <i id="icon"></i>
+                            </figure>
+                            <div class="weatherContent">
+                                <p class="weatherPrefix">Feels Like: 
+                                    <span id="feelsLike" class="weatherSuffix">...</span>
+                                </p>
+                                
+                                <p class="weatherPrefix">Humidity: 
+                                    <span id="humidity" class="weatherSuffix">...</span>
+                                </p>
+                                
+                                <p class="weatherPrefix">Wind: 
+                                    <span id="windSpeed" class="weatherSuffix">...</span>
+                                </p>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                </header>
+
+                <section id="stacks">
+                    
+                </section>
+
+            </main>
+                <aside>
+                    <div class="cpu-gauge-container relative w-full mt-6 md:mt-0 md:max-w-xl aspect-[2/1]   overflow-hidden flex justify-center items-end">
+                
+                        <svg viewBox="0 0 200 100" class="w-full h-full">
+                            <circle cx="100" cy="100" r="86" 
+                                fill="none" stroke="#36171E" stroke-width="18" 
+                                stroke-dasharray="270" stroke-dashoffset="0" 
+                                transform="rotate(180 100 100)" />
+                            
+                            <circle id="cpu-progress" cx="100" cy="100" r="86" 
+                                fill="none" stroke="#23A8B7" stroke-width="18" 
+                                stroke-dasharray="270" stroke-dashoffset="270" 
+                                transform="rotate(180 100 100)" />
+                                
+                            <circle id="cpu-ticks" cx="100" cy="100" r="86" 
+                                fill="none" stroke="#92312F" stroke-width="18" 
+                                stroke-dasharray="1.5 4.5" stroke-dashoffset="0" 
+                                transform="rotate(180 100 100)" />
+                        </svg>
+                        <div class="flex flex-col absolute inset-0 items-center justify-end pb-[5%]">
+                            <span id="cpu-text">0%</span>
+                            <span id="cpu-degrees"> °C</span>
+                        </div>
+
+                    </div>
+
+                    <section id="disks">
+
+                    </section>
+                    <article id="ramSpcs">
+                        <section id="rams">
+                        </section>
+                        <section>
+                            <p id="ramInfo">Carregando...</p>
+                        </section>
+                    </article> 
+                    
+                    <article id="immichInfo">
+                        <h1 id="immichTitle">Immich</h1>
+                        <div id="immichContent">
+                            <table id="immichTable">
+                                <tr>
+                                    <td class="immichPrefix">Photos: </td>
+                                    <td id="photoQT" class="immichSuffix"></td>
+                                </tr>
+                                <tr>
+                                    <td class="immichPrefix">Videos: </td>
+                                    <td id="vidQT" class="immichSuffix"></td>
+                                </tr>
+                                <tr>
+                                    <td class="immichPrefix">Total usage: </td>
+                                    <td id="espTot" class="immichSuffix"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                </aside>
+        
+        </div>
+        <script src="config.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
