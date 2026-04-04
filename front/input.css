@@ -32,32 +32,39 @@
     }
 
     .overlay-container{
-        @apply absolute inset-0 p-5 lg:p-10 justify-center;
+        @apply absolute inset-0 p-5 lg:p-8 justify-start;
         @apply grid grid-cols-2 gap-1 md:gap-5;
         @apply text-white;
     }
 
+    .dateContent {
+        @apply col-span-2 flex flex-col items-start place-items-start place-self-start justify-start w-full gap-0 lg:gap-1 mt-1;
+    }
 
-    #date{
-        @apply font-rajdhani font-semibold text-sm md:text-xl xl:text-3xl text-center text-cyberorange;
-        
+
+    #date {
+        @apply font-rajdhani font-semibold text-sm md:text-xl xl:text-3xl text-cyberorange text-left leading-tight m-0 p-0 w-full;
     }
 
     .weather{
         @apply col-span-1 grid grid-cols-[1fr_auto] items-start gap-y-0 pr-6 lg:pr-10;
     }
 
-    #temp, #clock{
-        @apply font-orbitron font-semibold text-3xl md:text-4xl xl:text-6xl text-cyberyellow leading-none;
-        @apply col-span-1;
+    #temp, #clock {
+        @apply font-orbitron font-semibold text-3xl md:text-4xl xl:text-6xl text-cyberyellow leading-none col-start-1 whitespace-nowrap text-left;
     }
+
+    #clock{
+        @apply col-start-1 leading-none  whitespace-nowrap;
+    }
+
 
     #temp{
-        @apply col-start-1 leading-none whitespace-nowrap;;
+        @apply col-start-1 leading-none whitespace-nowrap;
     }
 
-    .clock{
-        @apply gap-1 lg:gap-3;
+    .clock {
+        @apply col-span-1 grid grid-cols-[1fr_auto] place-self-start items-start gap-y-0 md:gap-y-2 lg:gap-y-6 pl-6  w-full; 
     }
 
     .weatherContent {
@@ -81,7 +88,7 @@
     }
 
     #stacks{
-        @apply w-full max-w-3xl justify-items-center h-auto py-16 lg:w-full lg:h-full grid grid-cols-3 lg:grid-cols-5 lg:gap-4;
+        @apply w-full max-w-3xl justify-items-center h-auto py-16 lg:w-full lg:h-full grid grid-cols-3 lg:grid-cols-5 gap-y-6 lg:gap-4;
     }
 
     .appContainer{
